@@ -1,28 +1,20 @@
-:root {
-    --primary-black-color: #000000;
-    --primary-white-color: #ffffff;
-    --accent-color: #2196f3;
-    --dark-main-color: #212121;
-    --text-color: #757575;
-    --primary-footer-color: #2f303a;
-    --background-primary-gray: #f5f4fa;
-    --background-primary-dark: rgba(47, 48, 58, 0.8);
-    --backdrop-modal-color: rgba(0, 0, 0, 0.2);
-  }
+@import './utils/vars';
+@import './components/page-header';
+
   /* 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: color $timing-animation,
+    background-color $timing-animation; 
   */
   .backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity $timing-animation;
   
     width: 100%;
     height: 100%;
   
-    background-color: var(--backdrop-modal-color);
+    background-color: $backdrop-modal-color;
   }
   
   .backdrop.is-hidden {
@@ -47,7 +39,7 @@
     /* текст */
   
     /* все інше */
-    background-color: var(--primary-white-color);
+    background-color: $primary-white-color;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
@@ -69,7 +61,7 @@
     height: 30px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: var(--primary-white-color);
+    background-color: $primary-white-color;
     cursor: pointer;
   }
   
@@ -80,14 +72,14 @@
     left: 50%;
     transform: translateY(-50%); */
   
-    fill: var(--color5, var(--dark-main-color));
+    fill: var(--color5, $dark-main-color);
   
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill $timing-animation;
   }
   
   .modal-close:focus .icon-close,
   .modal-close:hover .icon-close {
-    --color5: var(--accent-color);
+    --color5: #2196f3;
   }
   
   .form-title {
@@ -101,7 +93,7 @@
     text-align: center;
     letter-spacing: 0.03em;
   
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   }
   
   /* .js-form textarea {
@@ -114,7 +106,7 @@
     margin-left: 2px;
   
     text-decoration-line: underline;
-    color: var(--accent-color);
+    color: $accent-color;
   }
   
   .form-field {
@@ -136,9 +128,9 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
-    color: var(--text-color);
+    color: $text-color;
   
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: $timing-animation;
   }
   
   .form-label-2 {
@@ -152,17 +144,17 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
-    color: var(--text-color);
+    color: $text-color;
   
     /* pointer-events: none; */
   
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: $timing-animation;
   }
   
   .form-input:not(:placeholder-shown) ~ .form-label-2,
   .form-input:focus ~ .form-label-2 {
     transform: translateY(-42px);
-    /* color: var(--text-color); */
+    /* color: $text-color; */
   }
   
   .comment.form-input {
@@ -182,9 +174,9 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
-    color: var(--text-color);
+    color: $text-color;
   
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: $timing-animation;
   }
   
   .form-input::placeholder {
@@ -195,24 +187,24 @@
     line-height: 1.14;
     letter-spacing: 0.01em;
   
-    color: var(--text-color);
+    color: $text-color;
   }
   
   .form-input:focus ~ .icon {
-    --color4: var(--accent-color);
+    --color4: #2196f3;
   }
   
   .form-input:focus {
     outline: none;
-    border-color: var(--accent-color);
-    --color4: var(--accent-color);
+    border-color: $accent-color;
+    --color4: #2196f3;
   }
   
   .form-input:not(:placeholder-shown) ~ .form-label,
   .form-input:focus ~ .form-label {
     transform: translateY(-42px) translateX(16px);
-    /* --color4: var(--accent-color); */
-    /* color: var(--text-color); */
+    /* --color4: $accent-color; */
+    /* color: $text-color; */
   }
   
   .group-form-fields {
@@ -227,9 +219,9 @@
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color: var(--text-color);
+    color: $text-color;
   
-    /* transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    /* transition: all $timing-animation; */
   }
   
   .checkbox-field,
@@ -251,15 +243,15 @@
     display: block;
     width: 16px;
     height: 15px;
-    border: 2px solid var(--dark-main-color);
+    border: 2px solid $dark-main-color;
     border-radius: 3px;
     margin-right: 8px;
     flex-shrink: 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: $timing-animation;
   }
   
   .checkbox:checked ~ .checkbox-label:before {
-    background-color: var(--accent-color);
+    background-color: $accent-color;
     border-color: transparent;
     background-image: url('../images/icon-check.svg');
     background-size: contain;
@@ -269,8 +261,8 @@
   
   .form-field:focus-within * {
     /* меняет также цвет текста интпут */
-    color: var(--accent-color);
-    /* --color4: var(--accent-color); */
+    color: $accent-color;
+    /* --color4: $accent-color; */
   }
   
   .icon {
@@ -280,9 +272,9 @@
     left: 19px;
     transform: translateY(-50%);
   
-    fill: var(--color4, var(--dark-main-color));
+    fill: var(--color4, $dark-main-color);
   
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill $timing-animation;
   }
   
   .button[type='submit'] {
@@ -308,8 +300,8 @@
   
     letter-spacing: 0.06em;
   
-    background-color: var(--accent-color);
-    color: var(--primary-white-color);
+    background-color: $accent-color;
+    color: $primary-white-color;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 1px 3px rgba(0, 0, 0, 0.12);
     border: none;
@@ -320,7 +312,7 @@
   }
   
   body {
-    /* color: var(--text-color); */
+    /* color: $text-color; */
     font-family: Roboto, sans-serif;
     background-color: #ffffff;
   }
@@ -386,7 +378,7 @@
   } */
   
   .logo-web {
-    color: var(--accent-color);
+    color: $accent-color;
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -395,7 +387,7 @@
   }
   
   .logo-studio-top {
-    color: var(--primary-black-color);
+    color: $primary-black-color;
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -414,19 +406,19 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color $timing-animation;
   }
   
   .nav-link:hover,
   .nav-link:focus {
-    color: var(--accent-color);
+    color: $accent-color;
     /* outline-width: 0px; */
   }
   
   .active {
-    color: var(--accent-color);
+    color: $accent-color;
   }
   
   .active::after {
@@ -436,7 +428,7 @@
     left: 0;
     height: 4px;
     width: 100%;
-    background-color: var(--accent-color);
+    background-color: $accent-color;
     border-radius: 2px;
   }
   
@@ -485,23 +477,23 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--text-color);
+    color: $text-color;
     /* fill: var(--color2, #757575); */
   
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color $timing-animation;
   }
   
   .contacts > a:hover,
   .contacts > a:focus {
-    color: var(--accent-color);
-    /* fill: var(--accent-color); */
-    --color2: var(--accent-color);
+    color: $accent-color;
+    /* fill: $accent-color; */
+    --color2: #2196f3;
   }
   
   .hdr-icon {
     margin-right: 10px;
     fill: var(--color2, #757575);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill $timing-animation;
   }
   
   /* </header> */
@@ -540,7 +532,7 @@
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--primary-white-color);
+    color: $primary-white-color;
     margin-top: 0;
     margin-bottom: 30px;
   }
@@ -555,8 +547,8 @@
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.06em;
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
+    color: $primary-white-color;
+    background-color: $accent-color;
     text-transform: none;
   }
   .button {
@@ -596,7 +588,7 @@
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   }
   
   .feature-items p {
@@ -607,14 +599,14 @@
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color: var(--text-color);
+    color: $text-color;
   }
   
   .feature-item:before {
     display: block;
     content: '';
     height: 120px;
-    background-color: var(--background-primary-gray);
+    background-color: $background-primary-gray;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -665,7 +657,7 @@
     line-height: 1.16;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   }
   
   .employments-name {
@@ -679,8 +671,8 @@
     text-align: center;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--primary-white-color);
-    background: var(--background-primary-dark);
+    color: $primary-white-color;
+    background: $background-primary-dark;
     /* bg */
     /* position: absolute; */
     /* width: 370px;
@@ -725,7 +717,7 @@
   } */
   
   .our-team-bg {
-    background-color: var(--background-primary-gray);
+    background-color: $background-primary-gray;
     /* margin-top: 94px; */
     /* margin-bottom: 94px; */
   }
@@ -737,7 +729,7 @@
   }
   
   .team-body {
-    background: var(--primary-white-color);
+    background: $primary-white-color;
     border-radius: 0px 0px 4px 4px;
     overflow: hidden;
     padding-bottom: 24px;
@@ -752,7 +744,7 @@
     line-height: 1.16;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
     /* Наша команда */
     /* position: absolute; */
     /* width: 264px;
@@ -787,7 +779,7 @@
     line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   }
   
   /* .team-body p */
@@ -800,7 +792,7 @@
     line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--text-color);
+    color: $text-color;
   }
   
   .social-link {
@@ -817,7 +809,7 @@
     height: 44px;
     border-radius: 50%;
   
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color $timing-animation;
   }
   
   .social-link li:not(:last-child) {
@@ -825,16 +817,14 @@
   }
   
   .social-icon {
-    /* width: 20px;
-    height: 20px; */
-    fill: var(--color1, #afb1b8);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: var(--color1, $primary-icon-color);
+    transition: fill $timing-animation;
   }
   
   .social-link a:hover,
   .social-link a:focus {
-    --color1: var(--primary-white-color);
-    background-color: var(--accent-color);
+    --color1: #ffffff ;
+    background-color: $accent-color;
     outline-width: 0px;
   }
   
@@ -872,31 +862,31 @@
     align-items: center;
     width: 170px;
     height: 90px;
-    border: 1px solid #afb1b8;
+    border: 1px solid $primary-icon-color;
     box-sizing: border-box;
     border-radius: 4px;
     overflow: hidden;
-    /* color: #afb1b8; */
-    fill: var(--color1, #afb1b8);
+    /* color: $primary-icon-color; */
+    fill: var(--color1, $primary-icon-color);
   
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border $timing-animation;
   }
   
   .customer-icon {
     /* fill: currentColor; */
-    fill: var(--color3, #afb1b8);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: var(--color3, $primary-icon-color);
+    transition: fill $timing-animation;
   }
   
   .customer-link:hover,
   .customer-link:focus {
-    border: 1px solid var(--accent-color);
-    --color3: var(--accent-color);
+    border: 1px solid $accent-color;
+    --color3: #2196f3;
   }
   
   /* .customer-link:hover .customer-icon,
   .customer-link:focus .customer-icon {
-    --color1: var(--accent-color);
+    --color1: $accent-color;
   } */
   
   .customer-title {
@@ -905,7 +895,7 @@
     line-height: 1.16;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
     /* Постоянные клиенты */
     /* position: absolute;
     width: 390px;
@@ -916,15 +906,15 @@
   
   /* .customer img:hover,
   .customer img:focus {
-    background-color: var(--accent-color);
+    background-color: $accent-color;
   } */
   
   /* </studio-main> */
   
   /* .order button:hover,
   .subsorder button:focus {
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
+    color: $primary-white-color;
+    background-color: $accent-color;
     outline-width: 0px; */
   
   /* <PORTFOLIO main> */
@@ -953,8 +943,8 @@
     line-height: 1.63;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--dark-main-color);
-    background-color: var(--background-primary-gray);
+    color: $dark-main-color;
+    background-color: $background-primary-gray;
     padding: 6px 22px;
     border: none;
     border-radius: 4px;
@@ -962,14 +952,14 @@
     border: 0;
     /* outline-width: 0px; */
   
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color $timing-animation,
+      background-color $timing-animation;
   }
   
   .filters button:hover,
   .filters button:focus {
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
+    color: $primary-white-color;
+    background-color: $accent-color;
     cursor: pointer;
   }
   
@@ -1014,7 +1004,7 @@
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
-    color: var(--dark-main-color);
+    color: $dark-main-color;
   }
   
   .clients-list .card-discription {
@@ -1022,7 +1012,7 @@
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;
-    color: var(--text-color);
+    color: $text-color;
   }
   
   .card-image-container {
@@ -1041,7 +1031,7 @@
     /* opacity: 0; */
     /* box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
       0px 1px 1px rgba(0, 0, 0, 0.12); */
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow $timing-animation;
   }
   
   .card:hover,
@@ -1059,8 +1049,8 @@
     transform: translateY(100%);
     height: 100%;
     overflow: hidden;
-    transition: transformY, 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* transition: opacity, 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: transformY, $timing-animation;
+    /* transition: opacity, $timing-animation; */
   
     display: inline-block;
     padding: 63px 24px;
@@ -1070,8 +1060,8 @@
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
+    color: $primary-white-color;
+    background-color: $accent-color;
   }
   
   /* </PORTFOLIO main> */
@@ -1079,7 +1069,7 @@
   /* <footer> */
   
   footer {
-    background: var(--primary-footer-color);
+    background: $primary-footer-color;
   }
   
   .company-address {
@@ -1096,7 +1086,7 @@
   }
   
   .logo-studio-bottom {
-    color: var(--primary-white-color);
+    color: $primary-white-color;
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -1139,7 +1129,7 @@
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color: var(--primary-white-color);
+    color: $primary-white-color;
   }
   
   .footer-address a {
@@ -1168,13 +1158,13 @@
     line-height: 1.71;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--primary-white-color);
+    color: $primary-white-color;
     margin-bottom: 10px;
   }
   
   .join a {
     /* display: flex; */
-    color: var(--primary-white-color);
+    color: $primary-white-color;
   }
   
   .social-icon-fr {
@@ -1185,8 +1175,8 @@
   
   /* .social-link a:hover,
   .social-link a:focus {
-    --color1: var(--primary-white-color);
-    background-color: var(--accent-color);
+    --color1: $primary-white-color;
+    background-color: $accent-color;
     outline-width: 0px;
   } */
   
@@ -1198,9 +1188,8 @@
   
   .sl-fr a {
     background: rgba(255, 255, 255, 0.1);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* color1: #ffffff; */
-  }
+    transition: background-color $timing-animation;
+    }
   
   .sl-fr a:hover,
   .sl-fr a:focus {
@@ -1224,7 +1213,7 @@
     line-height: 1.87;
     letter-spacing: 0.06em;
   
-    color: var(--primary-white-color);
+    color: $primary-white-color;
   
     /* height: 45%; */
   }
@@ -1240,7 +1229,7 @@
     line-height: 1.71;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--primary-white-color);
+    color: $primary-white-color;
     margin-bottom: 10px;
     margin-right: auto;
     /* margin-left: 0px; */
@@ -1265,23 +1254,23 @@
     text-align: center;
     letter-spacing: 0.06em;
     /* Вигляд кнопки змінити, коли форму розмітимо */
-    color: var(--primary-white-color);
+    color: $primary-white-color;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
   
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color $timing-animation,
+      background-color $timing-animation;
   }
   .subscribe-button:hover,
   .subscribe-button:focus {
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
+    color: $primary-white-color;
+    background-color: $accent-color;
     /* outline-width: 0px; */
     cursor: url(../images/icon-send.svg), pointer;
   }
   
   .email-subscribe {
-    display: inline;
+    display: inline-block;
     /* align-items: center; */
   
     font-style: normal;
@@ -1300,40 +1289,11 @@
     width: 100%;
   
     color: rgba(255, 255, 255, 0.6);
-    background-color: var(--primary-footer-color);
+    background-color: $primary-footer-color;
   
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
   }
-  
-  /* 
-  .footer-bottom-box {
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    height: 60px;
-  } */
-  
-  /* 
-  .developer-info {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 2;
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.4);
-  } */
-  
-  /* </footer> */
-  
-  /* button{
-          background: ;
-          color: ;
-          :hover
-          :focus
-          :none
-       */
   

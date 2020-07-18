@@ -2,6 +2,7 @@
 @import './utils/plaseholders';
 @import './utils/mixins';
 @import './components/logo';
+@import './components/nav-menu';
 @import './components/page-header';
 @import './components/modal-form';
 
@@ -74,64 +75,6 @@ img {
     min-width: 153px;
   } */
 
-.nav-link {
-  position: relative;
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: $dark-main-color;
-
-  transition: color $timing-animation;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  color: $accent-color;
-  /* outline-width: 0px; */
-}
-
-.active {
-  color: $accent-color;
-}
-
-.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background-color: $accent-color;
-  border-radius: 2px;
-}
-
-.menu-nav {
-  display: flex;
-}
-
-/* .menu-nav .item {
-    background: tomato;
-  } */
-
-.menu-nav .item + .item {
-  margin-left: 50px;
-}
-
-.menu-nav {
-  margin-left: 85px;
-}
-
-.nav-flex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
 /* Контакты */
 /* .contacts {
     display: flex;

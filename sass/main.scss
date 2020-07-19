@@ -1,316 +1,15 @@
 @import './utils/vars';
 @import './utils/plaseholders';
 @import './utils/mixins';
+@import './components/general-styles';
 @import './components/logo';
-@import './components/nav-menu';
-@import './components/page-header';
+@import './components/header-nav-menu';
+@import './components/header-contacts';
+@import './components/hero';
 @import './components/modal-form';
-
-header {
-  border: 1px solid #ececec;
-}
-
-body {
-  font-family: Roboto, sans-serif;
-  background-color: #ffffff;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none; /* Убираем маркеры */
-}
-
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0; /* Отступ слева в браузере IE и Opera */
-  padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
-}
-
-address {
-  font-style: normal;
-}
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 1200px;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.hidden {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-/* *:focus {
-    outline: 2 px solid black;
-  } */
-/* <header> */
-/* Логотип */
-/* .nav-flex a([href="./index.html"]) {
-    display: flex;
-    margin-top: 24px;
-    margin-bottom: 25px;
-    margin-left: 215px;
-    min-width: 153px;
-  } */
-
-/* Контакты */
-/* .contacts {
-    display: flex;
-    margin-left: auto;
-  } */
-
-.contacts-flex {
-  display: flex;
-  margin-left: auto;
-}
-
-.contacts a + a {
-  margin-left: 30px;
-}
-
-.contacts > a {
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: $text-color;
-  /* fill: var(--color2, #757575); */
-
-  transition: color $timing-animation;
-}
-
-.contacts > a:hover,
-.contacts > a:focus {
-  color: $accent-color;
-  /* fill: $accent-color; */
-  --color2: #2196f3;
-}
-
-.hdr-icon {
-  margin-right: 10px;
-  fill: var(--color2, #757575);
-  transition: fill $timing-animation;
-}
-
-/* </header> */
-
-/* <studio-main> */
-
-.overlay {
-  @include centredFlex;
-
-  max-width: 1600px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  background: grey;
-  /* background-image: url(../images/Header-img.jpg); */
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.8),
-      rgba(47, 48, 58, 0.8)
-    ),
-    url(../images/Header-img.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  flex-direction: column;
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
-.hero h1 {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $primary-white-color;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.order {
-  /* margin-top: 350px;
-    margin-bottom: 200px;
-    margin-left: 700px;
-    margin-right: 700px; */
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: $primary-white-color;
-  background-color: $accent-color;
-  text-transform: none;
-}
-.button {
-  display: inline-block;
-  box-sizing: border-box;
-  min-width: 200px;
-  min-height: 50px;
-  border-radius: 4px;
-  /* border: 1px solid transparent; */
-  padding: 10px 32px;
-  /* align-items: center; */
-  text-align: center;
-}
-
-/* Особенности */
-
-.feature-container {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.feature-items {
-  display: flex;
-  justify-content: space-between;
-}
-
-.feature-items li + li {
-  margin-left: 30px;
-}
-.feature-items h3 {
-  display: block;
-  margin-top: 30px;
-  margin-bottom: 10px;
-
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: $dark-main-color;
-}
-
-.feature-items p {
-  display: block;
-  margin: 0px;
-
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: $text-color;
-}
-
-.feature-item:before {
-  display: block;
-  content: '';
-  height: 120px;
-  background-color: $background-primary-gray;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.icon-antenna::before {
-  background-image: url(../images/antenna.svg);
-}
-
-.icon-clock::before {
-  background-image: url(../images/clock.svg);
-}
-
-.icon-diagram::before {
-  background-image: url(../images/diagram.svg);
-}
-
-.icon-astronaut::before {
-  background-image: url(../images/astronaut.svg);
-}
-/* Чем мы занимаемся */
-.employment-item {
-  position: relative;
-}
-
-.employments-name {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.employments {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.employments-container {
-  padding-bottom: 94px;
-}
-
-.employments-title {
-  display: block;
-  margin: 0 0 50px 0;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $dark-main-color;
-}
-
-.employments-name {
-  margin: 0;
-  /* тимчасово */
-  height: 70px;
-
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.71;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: $primary-white-color;
-  background: $background-primary-dark;
-  /* bg */
-  /* position: absolute; */
-  /* width: 370px;
-    height: 70px;
-    left: 615px;
-    top: 1435px; */
-}
-
-.employments li + li {
-  margin-left: 30px;
-}
-
-.employments-name {
-  @include centredFlex;
-}
-
-/* Наша команда */
+@import './components/features';
+@import './components/employments';
+@import './components/our-team';
 
 /* .box {
     margin-top: 94px;
@@ -335,114 +34,6 @@ img {
     margin-left: 30px;
   } */
 
-.our-team-bg {
-  background-color: $background-primary-gray;
-  /* margin-top: 94px; */
-  /* margin-bottom: 94px; */
-}
-.team-box {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  /* outline: 1px solid yellow; */
-  /* background: #2196f3; */
-}
-
-.team-body {
-  background: $primary-white-color;
-  border-radius: 0px 0px 4px 4px;
-  overflow: hidden;
-  padding-bottom: 24px;
-}
-
-.team-title {
-  display: block;
-  margin: 0 0 50px 0;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $dark-main-color;
-  /* Наша команда */
-  /* position: absolute; */
-  /* width: 264px;
-    height: 42px;
-    left: 668px;
-    top: 1693px; */
-}
-
-.team-items {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.team-items > li + li {
-  margin-left: 30px;
-}
-
-.team-items > li {
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
-  border-radius: 0px 0px 4px 4px;
-}
-
-/* .team-body h3 */
-.team-name {
-  display: block;
-  margin-bottom: 10px;
-
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.18;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $dark-main-color;
-}
-
-/* .team-body p */
-.team-function {
-  display: block;
-  margin-bottom: 16px;
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.18;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $text-color;
-}
-
-.social-link {
-  @include centredflex;
-}
-
-.social-link-svg {
-  @include centredflex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-
-  transition: background-color $timing-animation;
-}
-
-.social-link li:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social-icon {
-  fill: var(--color1, $primary-icon-color);
-  transition: fill $timing-animation;
-}
-
-.social-link a:hover,
-.social-link a:focus {
-  --color1: #ffffff;
-  background-color: $accent-color;
-  outline-width: 0px;
-}
-
 /* Постоянные клиенты  */
 
 .customer-box {
@@ -456,11 +47,11 @@ img {
 }
 
 .customer-items {
-  @include centredflex;
+  @include centredFlex;
 }
 
 .customer-item {
-  @include centredflex;
+  @include centredFlex;
   /* outline: 1px solid red; */
 }
 
@@ -468,7 +59,7 @@ img {
   margin-right: 30px;
 }
 .customer-link {
-  @include centredflex;
+  @include centredFlex;
   width: 170px;
   height: 90px;
   border: 1px solid $primary-icon-color;
@@ -789,7 +380,7 @@ footer {
   } */
 
 .sl-fr {
-  @include centredflex;
+  @include centredFlex;
 }
 
 .sl-fr a {

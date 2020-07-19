@@ -3,8 +3,8 @@
   margin-left: auto;
 }
 
-.contacts a + a {
-  margin-left: 30px;
+.contacts a:not(:last-child) {
+  margin-right: 30px;
 }
 
 .contacts > a {

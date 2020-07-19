@@ -37,6 +37,6 @@
   padding-bottom: 94px;
 }
 
-.employments li + li {
-  margin-left: 30px;
+.employments li:not(:last-child) {
+  margin-right: 30px;
 }
